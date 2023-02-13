@@ -4,7 +4,7 @@ on: push
 
 jobs:
   test_project:
-    runs-on: ubuntu-latest #os of python.anywhere
+    runs-on: windows-latest #os of python.anywhere
 
     steps:
     - uses: actions/checkout@v2  #checks out the repository, stays available for others
