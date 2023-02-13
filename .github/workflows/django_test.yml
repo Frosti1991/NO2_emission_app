@@ -4,7 +4,7 @@ on: push
 
 jobs:
   test_project:
-    runs-on: windows-latest #os of python.anywhere
+    runs-on: ubuntu-latest #os of python.anywhere
 
     steps:
     - uses: actions/checkout@v2  #checks out the repository, stays available for others
@@ -18,4 +18,5 @@ jobs:
         pip install -r requirements.txt
     - name: Run Tests
       run: |
-        python gasag_interview/gasag_interview/manage.py test
+        cd gasag_interview
+        python manage.py test
