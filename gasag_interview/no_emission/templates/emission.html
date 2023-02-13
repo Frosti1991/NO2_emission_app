@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block body_block %}
+<div class="container">
+    <h1>Here you can see the latest emission of NO2</h1>
+    <table class="table table-striped table-success">
+        <tr>
+            <th>Datum</th>
+            <th>Emission value [mikrogramm/m³]</th>
+            <th>Station ID</th>
+        </tr>
+        <tr>
+            <td>{{ emissions.0.time_date }}</td>
+            <td>{{ emissions.0.emission }}</td>
+            <td>{{ emissions.0.station_id }}</td>
+        </tr>
+    </table>
+
+</div>
+
+
+<div class="container">
+    <h1>Here you can see stored values of emission of NO2</h1>
+    <table class="table table-striped table-dark">
+        <tr>
+            <th>Datum</th>
+            <th>Emission value [mikrogramm/m³]</th>
+            <th>Station ID</th>
+        </tr>
+
+        {% for emission in emissions %}
+        <tr>
+            <td>{{ emission.time_date }} </td>
+            <td>{{ emission.emission }}</td>
+            <td>{{ emission.station_id }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

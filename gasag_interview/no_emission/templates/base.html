@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li><a class="navbar-brand" href="{% url 'index' %}">Landing Page</a></li>
+                <li><a class="navbar-link" href="{% url 'admin:index' %}">Admin</a></li>
+                <li><a class="navbar-link" href="{% url 'register' %}">Register</a></li>
+
+                {% if user.is_authenticated %}
+                <li><a class="navbar-link" href="{% url 'emission' %}">Emissions</a></li>
+                <li><a class="navbar-link" href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                <li><a class="navbar-link" href="{% url 'login' %}">Login</a></li>
+                {% endif %}
+
+            </ul>
+        </div>
+    </nav>
+    <div class=" container">
+        {% block body_block %}
+
+        {% endblock %}
+
+    </div>
+</body>
+
+</html>
