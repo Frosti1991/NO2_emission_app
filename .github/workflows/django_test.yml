@@ -5,17 +5,13 @@ on: push
 jobs:
   test_project:
     runs-on: ubuntu-latest #os of python.anywhere
-    strategy:
-      max-parallel: 4
-      matrix:
-        python-version: [3.6, 3.7, 3.8]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
+    - uses: actions/checkout@v2  #checks out the repository, stays available for others
+    - name: Set up Python 
+      uses: actions/setup-python@v2 #installs demanded python version 
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: 3.10
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
