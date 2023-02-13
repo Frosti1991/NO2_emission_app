@@ -18,4 +18,4 @@ jobs:
         pip install -r requirements.txt
     - name: Run Tests
       run: |
-        python manage.py test
+        python /home/runner/work/NO2_emission_app/gasag_interview/manage.py test
