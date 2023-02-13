@@ -18,4 +18,4 @@ jobs:
         pip install -r requirements.txt
     - name: Run Tests
       run: |
-        python manage.py test
+        python gasag_interview/gasag_interview/manage.py test
