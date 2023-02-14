@@ -43,8 +43,8 @@ def emission(request):
                          ).strftime("%Y-%m-%d")
         date_to_str = datetime.now().strftime("%Y-%m-%d")
         # format the datetime
-        time_from_str = str(datetime.now().hour-1)
-        time_to_str = str(datetime.now().hour-1)
+        time_from_str = str(datetime.now().hour)
+        time_to_str = str(datetime.now().hour)
         print(time_to_str)
         # url
         date_from = date_from_str
