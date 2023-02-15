@@ -60,7 +60,7 @@ def emission(request):
         json_data = response.json()
 
         # Loop over json_data (last 24 hours)
-        for i in range(24, 1, -1):
+        for i in range(24, 2, -1):
             json_time_dic = str(datetime.now().replace(
                 microsecond=0, second=0, minute=0)-timedelta(hours=i))
 
