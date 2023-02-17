@@ -60,10 +60,10 @@ def emission(request):
         json_data = response.json()
 
         # Loop over json_data (last 24 hours)
-        for i in range(24, 2, -1):
+        for i in range(24, 1, -1):
             json_time_dic = str(datetime.now().replace(
                 microsecond=0, second=0, minute=0)-timedelta(hours=i))
-
+            print(json_time_dic)
             # Extract NO emission value
             NO_value = json_data['data'][station][json_time_dic][3][1]
 
